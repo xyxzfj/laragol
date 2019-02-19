@@ -11,13 +11,15 @@ import (
 var db *gorm.DB
 
 func init() {
-	db2, err := gorm.Open("mysql", fmt.Sprintf(
+	conStr := fmt.Sprintf(
 		"%s:%s@tcp(%s:%s)/%s?charset=utf8&parseTime=True",
 		os.Getenv("DB_USERNAME"),
 		os.Getenv("DB_PASSWORD"),
 		os.Getenv("DB_HOST"),
 		os.Getenv("DB_PORT"),
-		os.Getenv("DB_DATABASE")))
+		os.Getenv("DB_DATABASE"))
+	//println(conStr)
+	db2, err := gorm.Open("mysql", conStr)
 
 	if err != nil {
 		println("Database Connection Error")

@@ -1,4 +1,4 @@
-GOPATH := ${PWD}/vendor:${PWD}
+GOPATH := ${PWD}/vendor:${PWD}:/go
 export GOPATH
 
 main: clean

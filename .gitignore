@@ -2,3 +2,7 @@ bin/main
 pkg
 vendor
 data
+.cache
+src
+.idea
+.env
